@@ -25,16 +25,16 @@ const menus = {
   View: [['zoomIn', 'Zoom in', '+'], ['zoomOut', 'Zoom out', '−'], ['actual', 'Actual size', '100%'], ['fit', 'Fit to window', '']],
   Image: [['crop', 'Crop to selection', ''], ['resize', 'Canvas size…', ''], null, ['flipH', 'Flip horizontally', ''], ['flipV', 'Flip vertically', ''], ['rotate', 'Rotate 90° clockwise', ''], ['invert', 'Invert colors', ''], ['clear', 'Clear image', '']],
   Colors: [['customColor', 'Edit foreground color…', ''], ['backgroundColor', 'Edit background color…', ''], ['swap', 'Swap colors', 'X']],
-  Help: [['help', 'Quick guide', '?'], ['about', 'About Paint', '']],
+  Help: [['help', 'Quick guide', '?'], ['about', 'About Paintlet', '']],
 };
 
 document.querySelector('#app').innerHTML = `
-  <main class="paint-window" aria-label="Paint application">
+  <main class="paint-window" aria-label="Paintlet application">
     <header class="titlebar">
       <span class="app-icon">${icon('palette')}</span>
-      <h1 id="window-title">Untitled — Paint</h1>
+      <h1 id="window-title">Untitled — Paintlet</h1>
       <span class="title-note">a little room for your imagination</span>
-      <button class="title-help" data-action="about" aria-label="About Paint" title="About Paint">?</button>
+      <button class="title-help" data-action="about" aria-label="About Paintlet" title="About Paintlet">?</button>
     </header>
     <nav class="menubar" aria-label="Application menus">
       ${Object.entries(menus).map(([label, entries]) => `<div class="menu-wrap"><button class="menu-trigger" aria-haspopup="true" aria-expanded="false" aria-controls="menu-${label}"><span>${label[0]}</span>${label.slice(1)}</button><div class="menu-popup" id="menu-${label}" hidden role="menu" aria-label="${label}">${entries.map(entry => entry ? `<button role="menuitem" data-action="${entry[0]}"><span>${entry[1]}</span><kbd>${entry[2]}</kbd></button>` : '<hr>').join('')}</div></div>`).join('')}
@@ -56,7 +56,7 @@ document.querySelector('#app').innerHTML = `
           <div class="stroke-preview" aria-hidden="true"><span id="stroke-sample"></span></div>
           <label for="shape-style">Shape</label>
           <select id="shape-style" title="Shape fill style"><option value="outline">Outline</option><option value="both">Fill + line</option><option value="solid">Solid fill</option></select>
-          <div class="toolbox-caption"><span>PAINT</span><small>make your mark</small></div>
+          <div class="toolbox-caption"><span>PAINTLET</span><small>make your mark</small></div>
         </div>
       </aside>
       <section class="drawing-area" aria-label="Drawing workspace">
@@ -93,7 +93,7 @@ function toast(message) {
   toastTimer = setTimeout(() => { $('#toast').hidden = true; }, 2800);
 }
 function update() {
-  const title = `${filename}${bitmap.dirty ? ' *' : ''} — Paint`;
+  const title = `${filename}${bitmap.dirty ? ' *' : ''} — Paintlet`;
   $('#window-title').textContent = title; document.title = title;
   $('#document-label').textContent = filename;
   $('#dimensions').textContent = `${bitmap.width} × ${bitmap.height} px`;
@@ -254,7 +254,7 @@ const actions = {
     editor.selection = null; bitmap.ctx.fillStyle = editor.background; bitmap.ctx.fillRect(0, 0, bitmap.width, bitmap.height); bitmap.commit();
   },
   help() { return dialog('A quick guide', `<div class="guide"><p><strong>Make your mark.</strong> Choose a tool on the left and draw on the white canvas.</p><p><strong>Make it yours.</strong> Click a swatch for your foreground color, or right-click for the background. Press X to swap them.</p><p><strong>Keep experimenting.</strong> Ctrl/⌘+Z undoes a step. Ctrl/⌘+Shift+Z redoes it. Hold Shift for straight lines and perfect shapes.</p><p><strong>Move things around.</strong> Use Select to draw a box, then drag inside it. Crop keeps only the selected area.</p><p><strong>Take it with you.</strong> Open an image or drop one onto the canvas. Ctrl/⌘+S saves a PNG. Pictures stay in your browser and are not uploaded.</p><p class="muted">Tool shortcuts: S select · P pencil · B brush · E eraser · F fill · I picker · T text · L line · R rectangle · O ellipse.</p></div>`); },
-  about() { return dialog('About Paint', `<div class="about-icon">${icon('palette')}</div><h2>A familiar place to create.</h2><p>A browser-based tribute to classic Windows Paint.<br>A blank canvas, a handful of tools, and you.</p><p class="muted">An independent project by 0xmodo.<br>Not affiliated with Microsoft.</p><p class="muted">Your images are processed locally. Save your work before closing the tab.</p>`); },
+  about() { return dialog('About Paintlet', `<div class="about-icon">${icon('palette')}</div><h2>A familiar place to create.</h2><p>A browser-based tribute to classic Windows Paint.<br>A blank canvas, a handful of tools, and you.</p><p class="muted">An independent project by 0xmodo.<br>Not affiliated with Microsoft.</p><p class="muted">Your images are processed locally. Save your work before closing the tab.</p>`); },
 };
 document.querySelectorAll('[data-action]').forEach(button => button.addEventListener('click', () => { closeMenus(); actions[button.dataset.action]?.(); }));
 
