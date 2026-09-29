@@ -1,0 +1,24 @@
+.paint-window { height: 100dvh; min-height: 440px; display: flex; flex-direction: column; border: 3px solid #1557c0; background: var(--chrome); overflow: hidden; }
+.titlebar { display: flex; align-items: center; flex: none; height: 35px; gap: 9px; padding: 0 7px; background: linear-gradient(#4893f4 0%,#1768d6 12%,#0755c6 75%,#084ab0); color: white; text-shadow: 1px 1px #163c8b; }
+.app-icon { color: #ffe69b; display: grid; place-items: center; }
+.titlebar h1 { margin: 0; font-size: 13px; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.title-note { margin-left: auto; font-size: 10px; color: #d2e2ff; text-shadow: none; letter-spacing: .2px; }
+.title-help { margin-left: 12px; width: 24px; height: 24px; border: 1px solid white; border-radius: 3px; color: white; font-weight: bold; background: linear-gradient(140deg,#7db4ff,#1663cc); box-shadow: inset 1px 1px #a3c8ff; }
+.menubar { height: 30px; flex: none; display: flex; align-items: stretch; gap: 1px; padding: 1px 4px; border-bottom: 1px solid #d5d1c4; }
+.menu-wrap { position: relative; }
+.menu-trigger { height: 100%; padding: 0 10px; background: transparent; border: 1px solid transparent; font-size: 12px; }
+.menu-trigger > span { text-decoration: underline; text-underline-offset: 2px; }
+.menu-trigger:hover, .menu-trigger[aria-expanded=true] { background: #d8e6f9; border-color: #7a9ac4; }
+.menubar-end { margin: auto 11px auto auto; font-size: 10px; color: #8a8679; }
+.menu-popup { position: absolute; z-index: 20; top: 100%; left: 0; min-width: 245px; padding: 3px; background: #fffdf6; border: 1px solid #96917d; box-shadow: 3px 3px 0 #0002; }
+.menu-popup button { display: flex; width: 100%; align-items: center; justify-content: space-between; gap: 25px; padding: 8px 13px; font-size: 12px; border: 0; background: transparent; text-align: left; }
+.menu-popup button:not(:disabled):hover, .menu-popup button:focus-visible { background: #1e61c5; color: white; }
+.menu-popup kbd { font: inherit; color: #77756a; font-size: 11px; }
+.menu-popup button:hover kbd { color: inherit; }
+.menu-popup hr { border: 0; border-top: 1px solid #d9d6ca; margin: 4px 7px; }
+.commandbar { display: flex; align-items: center; gap: 10px; flex: none; min-height: 42px; padding: 5px 10px; border-bottom: 1px solid #bcb8a9; box-shadow: 0 1px white inset; }
+.command-group { display: flex; align-items: center; gap: 3px; border-right: 1px solid #c4c0b1; padding-right: 10px; }
+.icon-button, .text-button { display: flex; align-items: center; justify-content: center; gap: 6px; border: 1px solid transparent; background: transparent; height: 30px; padding: 4px 7px; font-size: 11px; }
+.icon-button { width: 31px; }
+.icon-button:not(:disabled):hover, .text-button:not(:disabled):hover { background: #fff7d7; border-color: #d6b35c; }
+.command-hint { margin-left: auto; font-size: 12px; color: #807b6c; }

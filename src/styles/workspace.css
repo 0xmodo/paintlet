@@ -1,0 +1,27 @@
+.editor-layout { display: flex; flex: 1; min-height: 0; }
+.toolbox { flex: 0 0 91px; padding: 8px 7px; border-right: 1px solid #ada898; box-shadow: -1px 0 #faf8ef inset; }
+.grip { width: 29px; height: 3px; margin: 0 auto 9px; border-top: 1px solid #aba796; border-bottom: 1px solid #fff; }
+.tool-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 3px; }
+.tool-button { width: 36px; height: 35px; background: var(--chrome); border: 1px solid transparent; display: grid; place-items: center; padding: 5px; }
+.tool-button:hover { background: #faf5e6; border: 1px solid #b9b3a0; }
+.tool-button[aria-pressed=true] { background: #fff0c2; border: 1px solid #bf934c; box-shadow: inset 1px 1px #fff8e4; color: #245a9c; }
+.tool-settings { margin-top: 16px; padding-top: 13px; border-top: 1px solid #c5c0ae; }
+.tool-settings label { display: block; color: #777162; font-size: 10px; margin: 0 0 6px 2px; }
+.tool-settings select { width: 100%; min-width: 0; height: 25px; padding: 2px; border: 1px solid #bab4a0; background: #fffef8; border-radius: 0; font-size: 10px; }
+.stroke-preview { height: 44px; display: grid; place-items: center; margin-bottom: 9px; }
+.stroke-preview span { width: 45px; height: 3px; border-radius: 20px; background: #202020; }
+.toolbox-caption { margin-top: 34px; text-align: center; color: #a6a08e; }
+.toolbox-caption span { font-size: 12px; letter-spacing: 3px; }
+.toolbox-caption small { display: block; margin-top: 6px; font-size: 8px; }
+.drawing-area { flex: 1; min-width: 0; display: flex; flex-direction: column; background: #a6a79e; background-image: radial-gradient(#7e827433 .6px, transparent .6px); background-size: 4px 4px; }
+.workspace-caption { display: flex; justify-content: space-between; align-items: center; flex: none; height: 39px; padding: 0 24px; color: #50544c; font-size: 9px; letter-spacing: 1.8px; }
+#document-label { max-width: 45%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.workspace-caption span:last-child { opacity: .65; font-size: 8px; letter-spacing: 1.5px; }
+.canvas-scroll { flex: 1; min-height: 0; overflow: auto; padding: 8px 24px 28px; scrollbar-color: #d3d1c2 #979990; scrollbar-width: thin; }
+.canvas-frame { width: fit-content; position: relative; margin: 0 auto; box-shadow: 1px 1px 0 #6c7064, 0 5px 18px #393c3426; }
+#paint-canvas { display: block; background: white; touch-action: none; cursor: crosshair; image-rendering: pixelated; }
+.canvas-handle { position: absolute; width: 6px; height: 6px; background: #e8e6d9; border: 1px solid #5c6158; bottom: -5px; right: -5px; }
+.workspace-footer { min-height: 28px; flex: none; display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 0 24px; font-size: 10px; color: #52564c; }
+.workspace-footer span:first-child { font-weight: 700; }
+.workspace-footer span:last-child { font-size: 8px; letter-spacing: 1px; }
+.drop-target { outline: 4px dashed #2f6ebc; outline-offset: -7px; }

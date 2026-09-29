@@ -1,0 +1,41 @@
+@media (min-width: 1500px) { .workspace-caption { height: 54px; } }
+@media (max-width: 750px) {
+  .title-note, .menubar-end, .command-hint, .palette-tip, .workspace-caption span:last-child, .workspace-footer span:last-child { display: none; }
+  .title-help { margin-left: auto; }
+  .palettebar { gap: 10px; padding: 9px; }
+  .swatches { grid-template-columns: repeat(14, 16px); grid-template-rows: repeat(2, 17px); gap: 2px; }
+  .workspace-caption { padding: 0 15px; height: 29px; }
+  .canvas-scroll { padding: 8px 15px 20px; }
+  .workspace-footer { padding: 0 12px; font-size: 9px; }
+  #coordinates { display: none; }
+  .statusbar > span { padding: 0 6px; }
+  #dimensions { min-width: 98px; }
+}
+@media (max-width: 480px) {
+  .paint-window { border-width: 2px; }
+  .menu-trigger { padding: 0 8px; font-size: 11px; }
+  .menubar .menu-wrap:nth-child(n+4) .menu-popup { left: auto; right: 0; }
+  .toolbox { flex-basis: 70px; padding: 7px 4px; }
+  .tool-button { width: 29px; height: 32px; padding: 4px; }
+  .tool-button svg { width: 18px; height: 18px; }
+  .tool-grid { gap: 2px; }
+  .tool-settings { margin-top: 10px; padding-top: 10px; }
+  .toolbox-caption { display: none; }
+  .commandbar { gap: 5px; padding: 4px; min-height: 39px; }
+  .command-group { padding-right: 5px; gap: 0; }
+  .command-group:last-of-type { border: 0; padding-right: 0; }
+  .text-button { padding: 4px; }
+  .text-button span { font-size: 9px; }
+  .icon-button { width: 28px; }
+  .palettebar { gap: 8px; flex-wrap: wrap; padding: 8px; }
+  .swatches { grid-template-columns: repeat(14, 15px); grid-template-rows: repeat(2, 17px); gap: 2px; }
+  .color-stack { width: 40px; height: 39px; }
+  .custom-colors { margin-left: auto; gap: 3px; }
+  .custom-colors label span, #background { display: none; }
+  input[type=color] { width: 26px; height: 31px; }
+  #status-message { display: none; }
+  #dimensions { flex: 1; }
+  .workspace-footer span:nth-child(2) { display: none; }
+  .zoom-controls { margin-left: 4px; }
+}
+@media (max-height: 600px) { .toolbox-caption, .stroke-preview { display: none; } .tool-settings { margin-top: 7px; padding-top: 7px; } .tool-settings label { margin-top: 5px; } }

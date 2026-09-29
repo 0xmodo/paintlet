@@ -1,0 +1,16 @@
+:root {
+  font-family: 'Ubuntu', sans-serif;
+  color: #282824;
+  font-synthesis: none;
+  --chrome: #ece9d8;
+  --edge: #aca899;
+  --blue: #175dcc;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: #b8c9cb; }
+button, input, select, textarea { font: inherit; }
+button { color: inherit; cursor: pointer; }
+button:disabled { opacity: .4; cursor: default; }
+button:focus-visible, select:focus-visible, input:focus-visible, textarea:focus-visible, canvas:focus-visible { outline: 2px solid #176dc7; outline-offset: 2px; }
+button svg { flex: none; }
+[hidden] { display: none !important; }
